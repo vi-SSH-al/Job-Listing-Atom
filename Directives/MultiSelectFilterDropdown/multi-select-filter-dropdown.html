@@ -1,0 +1,60 @@
+<div class="multi-select-dropdown">
+  <div class="multi-select-filter-header" ng-click="toggleDropdown()">
+    <span class="multi-select-filter-title">{{title}}</span>
+    <span
+      class="material-icons multi-select-dropdown-toggle"
+      ng-class="{'rotated': isOpen}"
+    >
+      expand_more
+    </span>
+  </div>
+  <div class="multi-select-filter-content" ng-class="{'open': isOpen}">
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-input"
+        ng-model="searchText"
+        placeholder="Search By {{title}}"
+      />
+    </div>
+    <div class="multi-select-dropdown-list" ng-if="searchText">
+      <div
+        class="multi-select-dropdown-item"
+        ng-repeat="item in items | filter:searchText"
+        ng-click="selectItem(item)"
+        ng-if="!isItemSelected(item)"
+      >
+        {{item}}
+      </div>
+      <div class="no-results" ng-if="hasNoResults()">
+        <span>No matching items found</span>
+        <button class="add-custom-selection" ng-click="addCustomItem()">
+          Add "{{searchText}}"
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="selected-items" ng-if="selectedItems.length > 0">
+    <div
+      class="selected-item"
+      ng-repeat="item in selectedItems"
+      ng-style="{'background-color': backgroundColor}"
+    >
+      <span class="item-text">{{item}}</span>
+      <span class="remove-icon" ng-click="removeItem(item)">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+            fill="#6B7280"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
