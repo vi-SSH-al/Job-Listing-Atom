@@ -4,32 +4,12 @@
     max-width: 768px;
     margin: 0 28px;
     padding: 20px;
-    border: 2px solid green;
     height: 73vh;
     overflow: auto;
-  }
+}
   
 
-  /* .container {
-    max-width: 100%;
-    padding: 20px;
-    background: #fff;
-} */
 
-/* .second-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 10px;
-} */
-.container {
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 0px 20px;
-  height: 73vh;
-  overflow: auto;
-}
 #p2 {
   margin: 0;
   padding-bottom: 1px;
