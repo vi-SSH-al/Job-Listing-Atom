@@ -9,6 +9,8 @@ angular.module("job_listing").directive("navbar", function ($document) {
       // Logo Image URL
       $scope.logoUrl =
         "https://media.licdn.com/dms/image/v2/D5622AQE9zq12SHD6sA/feedshare-shrink_800/B56ZUY4KjhHQAg-/0/1739879136122?e=2147483647&v=beta&t=3gNRg4sDzYd7XY2dgYOkZ2VrnKTrTmkQn1QdrxHnD10";
+      // $scope.logoUrl =
+      //   "./logo.jpeg";
 
       // Toggle Mobile Menu
       $scope.toggleMenu = function () {
