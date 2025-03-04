@@ -4,10 +4,13 @@
     max-width: 768px;
     margin: 0 auto;
     padding: 20px;
-    height: 100vh;
-    border: 2px solid blue;
+    height: 73vh;
     overflow: auto;
   }
+
+  .container::-webkit-scrollbar {
+    display: none;
+}
   
   .job-card {
     padding: 10px;
