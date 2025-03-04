@@ -1,7 +1,7 @@
 <!-- Directives/CheckboxGroupDirective/checkboxGroupDirective.html -->
 <div class="checkbox-group">
   <div class="checkbox-item" ng-repeat="item in items">
-    <input class="checkbox" type="checkbox" />
-    <label class="checkbox-label">{{item.label}} sdadsa</label>
+    <input class="checkbox" type="checkbox" ng-click="toggleCheck(item)" />
+    <label class="checkbox-label">{{item.label}}</label>
   </div>
 </div>

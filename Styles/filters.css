@@ -27,7 +27,8 @@
 /* Filter Sections */
 .filter-section {
   border-bottom: 1px solid #e0e0e0;
-  padding: 15px;
+  width: 100%;
+  padding-top: 8px;
 }
 
 .filter-header {
@@ -38,7 +39,10 @@
 }
 
 .filter-title {
-  font-weight: bold;
+  font-weight: 600;
+    font-size: 14px;
+    color: #212121;
+    margin-left: 9px;
 }
 
 .toggle-icon {
@@ -54,9 +58,11 @@
 }
 
 /* Search Inputs */
-.search-input {
+.search-icon {
   position: relative;
-  margin-top: 10px;
+  left: -264px;
+  top: 6px;
+  color: #424242;
 }
 
 .search-input input {
@@ -79,12 +85,13 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+  margin-left: 12px;
 }
 
 .checkbox {
   width: 18px;
   height: 18px;
-  border: 1px solid #ccc;
+  border: 1px solid #323232;
   border-radius: 3px;
   margin-right: 10px;
   display: flex;
@@ -109,7 +116,8 @@
 .checkbox-item {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  margin-left: 10px;
 }
 
 /* Dropdown Styles */
@@ -183,4 +191,220 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+/* Row layout for side-by-side fields */
+.row-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.row-left,
+.row-right {
+  width: 100%;
+  margin-left: 12px;
+}
+
+.range-row {
+  align-items: center;
+}
+
+.range-separator {
+  position: relative;
+  left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+/* Search Inputs */
+.search-input {
+  position: relative;
+  margin-top: 10px;
+}
+
+.search-input input {
+  width: 100%;
+  padding: 8px 30px 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-input i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.checkbox.checked {
+  background-color: #1a45a8;
+  border-color: #1a45a8;
+  color: white;
+}
+
+.checkbox-label {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox-group {
+  margin-top: 5px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Radio Button Styles */
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio-button {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.radio-button.selected {
+  border-color: #1a45a8;
+}
+
+.radio-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #1a45a8;
+}
+
+.radio-label {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Input Field Styles */
+.input-field-container {
+  width: 92%;
+
+  gap: 4px;
+}
+
+.input-field-label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Dropdown Styles */
+.dropdown-field {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+  font-size: 14px;
+}
+
+.dropdown-select.active {
+  border-color: #1a45a8;
+}
+
+.dropdown-selected-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-arrow {
+  color: #666;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown-option {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-option:hover {
+  background-color: #f5f5f5;
+}
+
+/* Text Input Styles */
+.text-field input {
+  width: 87%;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  gap: 8px;
+}
+
+.text-field input:focus {
+  border-color: #1a45a8;
+  outline: none;
+}
+
+.apply-filter-container {
+  width: 318px;
+  height: 48px;
+  background-color: #ffffff;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.apply-filter-btn {
+  margin-top: 12px;
+  width: 100%;
+  background-color: #192890;
+  height: 24px;
+
+  padding: 4px 8px 4px;
+  text-align: center;
+  color: #ccc;
+  font-weight: 400;
+  font-size: 12px;
 }

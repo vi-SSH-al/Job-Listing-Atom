@@ -47,55 +47,38 @@
     <p id="p2">Try changing or reset filters to see opportunities</p>
   </div>
 
-  <div class="job-card" ng-repeat="job in jobs">
-    <div class="job-card-header">
-      <div>
-        <div class="job-title-container">
-          <h2 class="job-title">{{job.opportunity_title}}</h2>
-          <span class="separator">|</span>
-          <span class="company-name">{{job.company}}</span>
+    <div class="job-card" ng-repeat="job in jobs">
+        <div class="job-card-header">
+            <div>
+                <div class="job-title-container">
+                    <h2 class="job-title">{{job.opportunity_title}}</h2>
+                    <span class="separator">|</span>
+                    <span class="company-name">{{job.company}}</span>
+                </div>
+                <div class="job-details">
+                    <div class="detail-item"><span class="material-icons">
+                        location_on
+                        </span> {{job.location}} ({{job.workplace_type}})
+                    </div>
+                    <div class="detail-item"><span class="material-icons">
+                        work_outline
+                        </span> {{job.work_experience.experience_required.min_year}} - {{job.work_experience.experience_required.max_year}} years
+                    </div>
+                    <div class="detail-item"><span class="material-icons">
+                        payments
+                    </span>
+                        {{formatSalary(job.salary)}}
+                    </div>
+                </div>
+            </div>
+            <span class="batch">{{job.opportunity_type}}</span>
         </div>
-        <div class="job-details">
-          <div class="detail-item">
-            <span class="material-icons"> location_on </span> {{job.location}}
-            ({{job.workplace_type}})
-          </div>
-          <div class="detail-item">
-            <span class="material-icons"> work_outline </span>
-            {{job.work_experience.experience_required.min_year}} -
-            {{job.work_experience.experience_required.max_year}} years
-          </div>
-          <div class="detail-item">
-            <span class="material-icons"> payments </span>
-            <span
-              ng-if="job.salary.min_salary === 0 && job.salary.max_salary === 0"
-              >Not specified</span
-            >
-            <span
-              ng-if="job.salary.min_salary > 0 && job.salary.max_salary > 0"
-            >
-              {{ job.salary.currency }} {{ job.salary.min_salary }} - {{
-              job.salary.max_salary }} / year
-            </span>
-            <span
-              ng-if="job.salary.min_salary > 0 && job.salary.max_salary === 0"
-            >
-              Min {{ job.salary.currency }} {{ job.salary.min_salary }} / year
-            </span>
-            <span
-              ng-if="job.salary.max_salary > 0 && job.salary.min_salary === 0"
-            >
-              Max {{ job.salary.currency }} {{ job.salary.max_salary }} / year
-            </span>
-          </div>
+        <div class="job-footer">
+            <span class="batch" ng-class="{'batch-time': isRecent(job.posted_at)}">{{timeAgo(job.posted_at)}} </span>
+            <span class="dot">•</span>
+            <span ng-if="job.status === 'applied'" class="material-icons verified">verified</span>
+            <span class="deadline" ng-class="{'text-red': applyFun(job.status, job.deadline_to_reply).daysLeft < 12}">{{applyFun(job.status, job.deadline_to_reply).text}}</span>
         </div>
-      </div>
-      <span class="batch">{{job.opportunity_type}}</span>
     </div>
-    <div class="job-footer">
-      <span class="batch batch-time">Posted 5 days ago</span>
-      <span class="dot">•</span>
-      <span>Apply by 12/02/2025</span>
-    </div>
-  </div>
+    
 </div>
