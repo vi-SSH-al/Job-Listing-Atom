@@ -44,7 +44,9 @@ body {
     height: 18%;
 }
 
-.job-list-display{
-    border: 2px solid red;
-    overflow: auto;
+
+@media screen and (max-width:1025) {
+    .filter-list-container{
+        height: 78%;
+    }
 }
