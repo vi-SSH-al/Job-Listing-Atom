@@ -10,15 +10,17 @@
   </div>
   <div class="multi-select-filter-content" ng-class="{'open': isOpen}">
     <div class="search-container">
-      <input
-        type="text"
-        class="search-input"
-        ng-model="searchText"
-        placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By {{title}}"
-      />
-      <span class="material-icons search-icon" ng-if="!searchText">
-        search
-      </span>
+      <div style="width: 93%">
+        <input
+          type="text"
+          class="search-input"
+          ng-model="searchText"
+          placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By {{title}}"
+        />
+        <span class="material-icons search-icon" ng-if="!searchText">
+          search
+        </span>
+      </div>
     </div>
     <div class="multi-select-dropdown-list" ng-if="searchText">
       <div

@@ -60,9 +60,9 @@
 /* Search Inputs */
 .search-icon {
   position: relative;
-  left: -264px;
-  top: 6px;
-  color: #424242;
+  left: 5px;
+  bottom: 29px;
+  color: #666;
 }
 
 .search-input input {
