@@ -13,7 +13,7 @@ angular.module("job_listing").directive("navbar", function ($document) {
       // Toggle Mobile Menu
       $scope.toggleMenu = function () {
         $scope.menuOpen = !$scope.menuOpen;
-        console.log("object");
+        // console.log("object");
       };
 
       // Close menu when clicking outside

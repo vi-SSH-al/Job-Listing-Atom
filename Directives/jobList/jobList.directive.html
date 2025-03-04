@@ -1,5 +1,32 @@
 
 <div class="container">
+    <div class="second-container">
+        <div class="dummy">
+            <p>Opportunities</p>
+            <div class="dummy-button">
+                <button > <span id="dummy1" class="material-icons" >
+                    settings
+                </span> Preferences</button>
+                <button ><span  id="dummy1" class="material-icons" >
+                    add
+                </span> Post an opportunity</button>
+            </div>
+         
+        </div>
+        
+        <div class="filterButtenForJobList">
+            <button  ng-click="setAllOpportunities()"> All opportunities </button>
+            <button ng-click = "setPostedByMe()" >Posted by me </button>
+            <button ng-click = "setAppliedByMe()"  >Applied by me</button>
+
+        </div>
+
+        <p id = "p1">Showing {{lengthOfData}} opportunities</p>
+
+
+    </div>
+
+
     <div class="job-card" ng-repeat="job in jobs">
         <div class="job-card-header">
             <div>
