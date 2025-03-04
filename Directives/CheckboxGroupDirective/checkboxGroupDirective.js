@@ -15,6 +15,7 @@
       templateUrl:
         "./Directives/CheckboxGroupDirective/checkboxGroupDirective.html",
       link: function (scope, element, attrs) {
+        // console.log("asdad", scope.items);
         scope.toggleCheck = function (item) {
           item.checked = !item.checked;
         };
