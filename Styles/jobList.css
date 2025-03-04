@@ -214,5 +214,26 @@
   
   .dot {
     margin: 0 8px;
+    color: #E0E0E0;
   }
+
   
+.job-card .material-icons{
+  font-size: 16px;
+}
+
+.deadline{
+  margin: 1px;
+  /* width: 10px; */
+  /* height: 10px; */
+}
+
+.verified{
+  margin: 0 3px;
+  /* border: 2px solid red; */
+  /* background-color: #8BC34A; */
+}
+
+.text-red {
+  color: red;
+}
