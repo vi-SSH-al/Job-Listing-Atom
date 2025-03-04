@@ -1,9 +1,4 @@
-body {
-    background-color: #f9fafb;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+
   
   .container {
     max-width: 768px;
@@ -66,9 +61,11 @@ body {
   
   .job-type {
     padding: 4px 12px;
+    color: #616161;
     font-size: 12px;
     font-weight: 500;
     border-radius: 9999px;
+    outline: 2px solid #E0E0E0;
   }
   
   .full-time {
