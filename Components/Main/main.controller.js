@@ -188,7 +188,18 @@ angular
       $rootScope.$broadcast("filtersApplied", $scope.filters);
     };
 
+    $scope.onSearchKeyup = function ($event) {
+      if ($event.keyCode === 13) {
+        // When Enter is pressed, broadcast the search query independently.
+        $rootScope.$broadcast(
+          "searchQuerySubmitted",
+          $scope.universalSearchInput
+        );
+      }
+    };
+
     // Reset filters
+
     $scope.resetFilters = function () {
       // Reset logic
     };
