@@ -1,0 +1,40 @@
+<!-- Directives/InputFieldDirective/inputFieldDirective.html -->
+<div class="input-field-container">
+  <div ng-if="label" class="input-field-label">{{label}}</div>
+
+  <!-- Dropdown type -->
+  <div ng-if="fieldType === 'dropdown'" class="dropdown-field">
+    <div
+      class="dropdown-select"
+      ng-class="{'active': isDropdownOpen}"
+      ng-click="toggleDropdown($event)"
+    >
+      <span class="dropdown-selected-text">{{getSelectedLabel()}}</span>
+      <div class="dropdown-arrow">
+        <i
+          class="fa"
+          ng-class="{'fa-chevron-down': !isDropdownOpen, 'fa-chevron-up': isDropdownOpen}"
+        ></i>
+      </div>
+    </div>
+    <div class="dropdown-options" ng-if="isDropdownOpen">
+      <div
+        class="dropdown-option"
+        ng-repeat="option in options"
+        ng-click="selectOption(option)"
+      >
+        {{option.label}}
+      </div>
+    </div>
+  </div>
+
+  <!-- Text input type -->
+  <div ng-if="fieldType === 'text'" class="text-field">
+    <input
+      type="text"
+      ng-model="model"
+      placeholder="{{placeholder}}"
+      ng-required="required"
+    />
+  </div>
+</div>

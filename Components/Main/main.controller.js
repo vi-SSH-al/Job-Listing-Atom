@@ -154,7 +154,27 @@ angular.module("job_listing").controller("MainController", function ($scope) {
 
   // Toggle filter sections
   $scope.toggleSection = function (section) {
-    $scope[section + "Expanded"] = !vm[section + "Expanded"];
+    $scope[section + "Expanded"] = !$scope[section + "Expanded"];
+  };
+  $scope.toggleSection = function (section) {
+    $scope[section + "Expanded"] = !$scope[section + "Expanded"];
+  };
+
+  // Helper functions for the experience section
+  $scope.isExperienced = function () {
+    return $scope.filters.workExperience.type === "experienced";
+  };
+
+  $scope.isFresher = function () {
+    return $scope.filters.workExperience.type === "fresher";
+  };
+
+  $scope.setExperienceType = function (type) {
+    $scope.filters.workExperience.type = type;
+  };
+
+  $scope.isSelected = function (type) {
+    return $scope.filters.workExperience.type === type;
   };
 
   // Initialize expanded sections
@@ -165,6 +185,10 @@ angular.module("job_listing").controller("MainController", function ($scope) {
   $scope.salaryExpanded = true;
   $scope.workExperienceExpanded = true;
   $scope.skillsExpanded = true;
+
+  $scope.toggleRadio = function () {
+    $scope.model = $scope.value;
+  };
 
   // Apply filters
   $scope.applyFilters = function () {
