@@ -5,4 +5,8 @@ app.config(function ($routeProvider) {
     templateUrl: "./Components/Demo/demo.html",
     controller: "demoController",
   });
+  $routeProvider.when("/navbar", {
+    templateUrl: "./Components/navbar/navbar.component.html",
+    controller: "navbarController",
+  });
 });
