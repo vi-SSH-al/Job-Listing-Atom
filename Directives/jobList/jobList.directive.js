@@ -56,6 +56,23 @@ angular.module("job_listing").directive("jobListDirective", function () {
         true
       );
 
+      $scope.$on("searchQuerySubmitted", function (event, query) {
+        if (!query || query.trim() === "") {
+          $scope.jobs = $scope.allOpportunities;
+        } else {
+          let lowerQuery = query.toLowerCase();
+
+          $scope.jobs = $scope.allOpportunities.filter(function (job) {
+            return (
+              job.opportunity_title.toLowerCase().includes(lowerQuery) ||
+              job.company.toLowerCase().includes(lowerQuery) ||
+              job.location.toLowerCase().includes(lowerQuery)
+            );
+          });
+        }
+        console.log("Jobs updated via search:", $scope.jobs);
+      });
+
       //Format timeAgo
       $scope.timeAgo = function (postedAt) {
         if (!postedAt) return "";

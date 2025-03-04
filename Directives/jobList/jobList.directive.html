@@ -1,51 +1,51 @@
 <div class="container">
-  <div class="second-container">
-    <div class="dummy">
-      <p>Opportunities</p>
-      <div class="dummy-button">
-        <button>
-          <span id="dummy1" class="material-icons"> settings </span> Preferences
-        </button>
+    <div class="second-container">
+        <div class="dummy">
+        <p>Opportunities</p>
+        <div class="dummy-button">
+            <button>
+            <span id="dummy1" class="material-icons"> settings </span> Preferences
+            </button>
 
-        <button>
-          <span id="dummy1" class="material-icons"> add </span> Post an
-          opportunity
-        </button>
-    </div>
-        <div class="mobile-dummy-button">
-          <button>
-            <span id="dummy1" class="material-icons"> settings </span>
+            <button>
+            <span id="dummy1" class="material-icons"> add </span> Post an
+            opportunity
+            </button>
+        </div>
+            <div class="mobile-dummy-button">
+            <button>
+                <span id="dummy1" class="material-icons"> settings </span>
+                
+            </button>
+            <button>
+                <span id="dummy1" class="material-icons"> add </span> Post 
+            </button>
             
-          </button>
-          <button>
-            <span id="dummy1" class="material-icons"> add </span> Post 
-          </button>
-        
-      </div>
+        </div>
+        </div>
+
+        <div class="filterButtenForJobList">
+        <button ng-click="setAllOpportunities()">All opportunities</button>
+        <button ng-click="setPostedByMe()">Posted by me</button>
+        <button ng-click="setAppliedByMe()">Applied by me</button>
+        </div>
+
+        <div class="noOfResult">
+        <p id="p1" ng-if="lengthOfData !=0">
+            Showing {{lengthOfData}} opportunities
+        </p>
+        <p id="p1" ng-if="lengthOfData ==0">{{lengthOfData}} opportunity found</p>
+        <div class="mobile-filter">
+            <span class="material-icons"> filter_alt </span>
+        </div>
+        </div>
     </div>
 
-    <div class="filterButtenForJobList">
-      <button ng-click="setAllOpportunities()">All opportunities</button>
-      <button ng-click="setPostedByMe()">Posted by me</button>
-      <button ng-click="setAppliedByMe()">Applied by me</button>
+    <div class="no-reply" ng-if="lengthOfData===0">
+        <img src="./Directives/jobList/image.png" alt="" srcset="" />
+        <p id="p2">There are no opportunities to display!</p>
+        <p id="p2">Try changing or reset filters to see opportunities</p>
     </div>
-
-    <div class="noOfResult">
-      <p id="p1" ng-if="lengthOfData !=0">
-        Showing {{lengthOfData}} opportunities
-      </p>
-      <p id="p1" ng-if="lengthOfData ==0">{{lengthOfData}} opportunity found</p>
-      <div class="mobile-filter">
-        <span class="material-icons"> filter_alt </span>
-      </div>
-    </div>
-  </div>
-
-  <div class="no-reply" ng-if="lengthOfData===0">
-    <img src="./Directives/jobList/image.png" alt="" srcset="" />
-    <p id="p2">There are no opportunities to display!</p>
-    <p id="p2">Try changing or reset filters to see opportunities</p>
-  </div>
 
     <div class="job-card" ng-repeat="job in jobs">
         <div class="job-card-header">
@@ -80,5 +80,4 @@
             <span class="deadline" ng-class="{'text-red': applyFun(job.status, job.deadline_to_reply).daysLeft < 12}">{{applyFun(job.status, job.deadline_to_reply).text}}</span>
         </div>
     </div>
-    
 </div>
