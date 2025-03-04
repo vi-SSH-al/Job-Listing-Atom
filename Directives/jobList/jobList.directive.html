@@ -54,7 +54,8 @@
             <span class="batch">{{job.opportunity_type}}</span>
         </div>
         <div class="job-footer">
-            <span class="batch batch-time">Posted 5 days ago</span>
+            <!-- <span class="batch batch-time">Posted 5 days ago</span> -->
+            <span class="batch batch-time">{{timeAgo(job.posted_at)}} </span>
             <span class="dot">•</span>
             <span>Apply by 12/02/2025</span>
         </div>

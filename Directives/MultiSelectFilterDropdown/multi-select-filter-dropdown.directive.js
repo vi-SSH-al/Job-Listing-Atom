@@ -52,6 +52,15 @@ angular
           return $scope.searchText && $scope.getFilteredItems().length === 0;
         };
 
+        $scope.getFilteredItems = function () {
+          // Filter items based on search text
+          return $scope.items.filter(function (item) {
+            return (
+              item.toLowerCase().indexOf($scope.searchText.toLowerCase()) > -1
+            );
+          });
+        };
+
         // Remove item from selection
         $scope.removeItem = function (item) {
           var index = $scope.selectedItems.indexOf(item);

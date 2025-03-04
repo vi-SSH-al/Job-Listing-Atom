@@ -21,21 +21,10 @@
 
       <!-- Industry Filter -->
       <div class="filter-section">
-        <div class="filter-header" ng-click="toggleSection('industry')">
-          <div class="filter-title">Industry</div>
-          <div class="toggle-icon">
-            <i
-              class="fa"
-              ng-class="{'fa-chevron-down': industryExpanded, 'fa-chevron-up': !industryExpanded}"
-            ></i>
-          </div>
-        </div>
-        <div class="filter-body" ng-show="industryExpanded">
-          <div class="search-input">
-            <input type="text" placeholder="Search industry" />
-            <i class="fa fa-search"></i>
-          </div>
-        </div>
+        <multi-select-filter-dropdown
+          title="Industry"
+          items="industries"
+        ></multi-select-filter-dropdown>
       </div>
 
       <!-- Opportunity Type Filter -->
@@ -57,21 +46,10 @@
 
       <!-- Location Filter -->
       <div class="filter-section">
-        <div class="filter-header" ng-click="toggleSection('location')">
-          <div class="filter-title">Location</div>
-          <div class="toggle-icon">
-            <i
-              class="fa"
-              ng-class="{'fa-chevron-down': locationExpanded, 'fa-chevron-up': !locationExpanded}"
-            ></i>
-          </div>
-        </div>
-        <div class="filter-body" ng-show="locationExpanded">
-          <div class="search-input">
-            <input type="text" placeholder="Search location" />
-            <i class="fa fa-search"></i>
-          </div>
-        </div>
+        <multi-select-filter-dropdown
+          title="Location"
+          items="locations"
+        ></multi-select-filter-dropdown>
       </div>
 
       <!-- Workplace Type Filter -->
@@ -226,21 +204,10 @@
 
       <!-- Skills Filter -->
       <div class="filter-section">
-        <div class="filter-header" ng-click="toggleSection('skills')">
-          <div class="filter-title">Skills</div>
-          <div class="toggle-icon">
-            <i
-              class="fa"
-              ng-class="{'fa-chevron-down': skillsExpanded, 'fa-chevron-up': !skillsExpanded}"
-            ></i>
-          </div>
-        </div>
-        <div class="filter-body" ng-show="skillsExpanded">
-          <div class="search-input">
-            <input type="text" placeholder="Search by skills (max 5)" />
-            <i class="fa fa-search"></i>
-          </div>
-        </div>
+        <multi-select-filter-dropdown
+          title="Skills"
+          items="Skills"
+        ></multi-select-filter-dropdown>
       </div>
       <!-- Other filters -->
 
