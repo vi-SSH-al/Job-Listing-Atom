@@ -18,6 +18,7 @@ angular
         .get("./secret.json")
         .then(function (response) {
           $scope.jobs = response.data;
+          console.log($scope.jobs);
           
           // Assign filtered data
           $scope.allOpportunities = $scope.jobs;
