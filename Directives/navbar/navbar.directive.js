@@ -1,4 +1,7 @@
 "use strict";
-angular.module("job_listing").controller("navbarController", function ($scope) {
-  $scope.data = "Noobs.......";
+angular.module("job_listing").directive("navbar", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./Directives/navbar/navbar.html",
+  };
 });
