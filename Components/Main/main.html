@@ -91,52 +91,60 @@
         </div>
       </div>
 
-      <!-- Salary Filter -->
+      <!-- Salary-->
       <div class="filter-section">
         <div class="filter-header" ng-click="toggleSection('salary')">
           <div class="filter-title">Salary</div>
           <div class="toggle-icon">
             <i
               class="fa"
-              ng-class="{'fa-chevron-down': salaryExpanded, 'fa-chevron-up': !salaryExpanded}"
+              ng-class="{'fa-chevron-up': !salaryExpanded, 'fa-chevron-down': salaryExpanded}"
             ></i>
           </div>
         </div>
         <div class="filter-body" ng-show="salaryExpanded">
-          <div class="dropdown-row">
-            <div class="dropdown-label">Currency</div>
-            <dropdown-directive
-              options="currencyOptions"
-              selected="filters.salary.currency"
-            >
-            </dropdown-directive>
-          </div>
-          <div class="dropdown-row">
-            <div class="dropdown-label">Rate</div>
-            <dropdown-directive
-              options="rateOptions"
-              selected="filters.salary.rate"
-            >
-            </dropdown-directive>
-          </div>
-          <div class="min-max-row">
-            <div class="min-max-label">Min salary</div>
-            <div class="min-max-input">
-              <input
-                type="text"
-                ng-model="filters.salary.min"
-                placeholder="Enter"
-              />
+          <div class="row-container">
+            <div class="row-left">
+              <div class="filter-label">Currency</div>
+              <input-field-directive
+                field-type="dropdown"
+                model="filters.salary.currency"
+                options="filters.currencyOptions"
+                placeholder="INR"
+              >
+              </input-field-directive>
+            </div>
+            <div class="row-right">
+              <div class="filter-label">Rate</div>
+              <input-field-directive
+                field-type="dropdown"
+                model="filters.salary.rate"
+                options="filters.rateOptions"
+                placeholder="per year"
+              >
+              </input-field-directive>
             </div>
           </div>
-          <div class="min-max-row">
-            <div class="min-max-label">Max salary</div>
-            <div class="min-max-input">
-              <input
-                type="text"
-                ng-model="filters.salary.max"
+
+          <div class="row-container range-row">
+            <div class="row-left">
+              <div class="filter-label">Min salary</div>
+              <input-field-directive
+                field-type="text"
+                model="filters.salary.min"
                 placeholder="Enter"
-              />
+              >
+              </input-field-directive>
+            </div>
+            <div class="range-separator">-</div>
+            <div class="row-right">
+              <div class="filter-label">Max salary</div>
+              <input-field-directive
+                field-type="text"
+                model="filters.salary.max"
+                placeholder="Enter"
+              >
+              </input-field-directive>
             </div>
           </div>
         </div>
@@ -149,40 +157,69 @@
           <div class="toggle-icon">
             <i
               class="fa"
-              ng-class="{'fa-chevron-down': workExperienceExpanded, 'fa-chevron-up': !workExperienceExpanded}"
+              ng-class="{'fa-chevron-up': !workExperienceExpanded, 'fa-chevron-down': workExperienceExpanded}"
             ></i>
           </div>
         </div>
         <div class="filter-body" ng-show="workExperienceExpanded">
           <div class="filter-option">
-            <checkbox-directive
-              label="Experienced"
-              model="filters.workExperience.experienced"
-            >
-            </checkbox-directive>
+            <div class="radio-container">
+              <div
+                class="radio-button"
+                ng-class="{'selected': isSelected('experienced')}"
+                ng-click="setExperienceType('experienced')"
+              >
+                <div
+                  class="radio-inner"
+                  ng-if="isSelected('experienced')"
+                ></div>
+              </div>
+              <div
+                class="radio-label"
+                ng-click="setExperienceType('experienced')"
+              >
+                Experience
+              </div>
+            </div>
           </div>
-          <div class="min-max-row">
-            <div class="min-max-label">Min years</div>
-            <dropdown-directive
-              options="yearsOptions"
-              selected="filters.workExperience.minYears"
-            >
-            </dropdown-directive>
+
+          <div class="row-container range-row" ng-show="isExperienced()">
+            <div class="row-left">
+              <div class="filter-label">Min years</div>
+              <input-field-directive
+                field-type="dropdown"
+                model="filters.workExperience.minYears"
+                options="filters.yearsOptions"
+                placeholder="Select"
+              >
+              </input-field-directive>
+            </div>
+            <div class="range-separator">-</div>
+            <div class="row-right">
+              <div class="filter-label">Max years</div>
+              <input-field-directive
+                field-type="dropdown"
+                model="filters.workExperience.maxYears"
+                options="filters.yearsOptions"
+                placeholder="Select"
+              >
+              </input-field-directive>
+            </div>
           </div>
-          <div class="min-max-row">
-            <div class="min-max-label">Max years</div>
-            <dropdown-directive
-              options="yearsOptions"
-              selected="filters.workExperience.maxYears"
-            >
-            </dropdown-directive>
-          </div>
+
           <div class="filter-option">
-            <checkbox-directive
-              label="Fresher"
-              model="filters.workExperience.fresher"
-            >
-            </checkbox-directive>
+            <div class="radio-container">
+              <div
+                class="radio-button"
+                ng-class="{'selected': isSelected('fresher')}"
+                ng-click="setExperienceType('fresher')"
+              >
+                <div class="radio-inner" ng-if="isSelected('fresher')"></div>
+              </div>
+              <div class="radio-label" ng-click="setExperienceType('fresher')">
+                Fresher
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -209,7 +246,7 @@
     <div class="jobs-list">
       <!-- <div class="job-list-headers">some content according to figma</div> -->
       <!-- <div class="job-list-display"> -->
-        <job-list-directive></job-list-directive>
+      <job-list-directive></job-list-directive>
       <!-- </div> -->
     </div>
   </div>
