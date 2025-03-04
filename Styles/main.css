@@ -43,3 +43,10 @@ body {
     width: 100%;
     height: 18%;
 }
+
+
+@media screen and (max-width:1025) {
+    .filter-list-container{
+        height: 78%;
+    }
+}
