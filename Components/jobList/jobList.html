@@ -1,15 +1,17 @@
 
 <div class="container">
-    <div class="job-card">
+    <div class="job-card" ng-repeat="job in jobs">
         <div class="job-card-header">
             <div>
                 <div class="job-title-container">
-                    <h2 class="job-title">Content Writer</h2>
+                    <h2 class="job-title">{{job.opportunity_title}}</h2>
                     <span class="separator">|</span>
-                    <span class="company-name">ABC Firms</span>
+                    <span class="company-name">{{job.company}}</span>
                 </div>
                 <div class="job-details">
-                    <div class="detail-item"><span>&#x1F4CD;</span> Bengaluru (Remote)</div>
+                    <div class="detail-item"><span class="material-icons">
+                        location_on
+                        </span> {{job.location}} ({{job.workplace_type}})</div>
                     <div class="detail-item"><span>&#x1F4BC;</span> Fresher</div>
                 </div>
             </div>
@@ -23,27 +25,4 @@
         </div>
     </div>
     
-    <div class="job-card">
-        <div class="job-card-header">
-            <div>
-                <div class="job-title-container">
-                    <h2 class="job-title">Software Engineer</h2>
-                    <span class="separator">|</span>
-                    <span class="company-name">ABC Firms</span>
-                </div>
-                <div class="job-details">
-                    <div class="detail-item"><span>&#x1F4CD;</span> Ahmedabad (Hybrid)</div>
-                    <div class="detail-item"><span>&#x1F4BC;</span> Not specified</div>
-                    <div class="detail-item"><span>&#x1F4B2;</span> INR 25,00,000 - 30,00,000 / year</div>
-                </div>
-            </div>
-            <span class="job-type volunteering">Volunteering</span>
-        </div>
-        <div class="job-footer">
-            <span class="clock-icon">&#x23F0;</span>
-            <span>Posted 1 week ago</span>
-            <span class="dot">•</span>
-            <span>Apply by 14/02/2025</span>
-        </div>
-    </div>
 </div>
