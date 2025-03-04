@@ -1,0 +1,7 @@
+<!-- Directives/CheckboxDirective/checkboxDirective.html -->
+<div class="checkbox-container">
+  <div class="checkbox" ng-class="{'checked': model}" ng-click="toggleCheck()">
+    <i class="fa fa-check" ng-if="model"></i>
+  </div>
+  <div class="checkbox-label" ng-click="toggleCheck()">{{label}}</div>
+</div>
