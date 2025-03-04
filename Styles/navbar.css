@@ -64,7 +64,7 @@
   
     .navbar {
       display: none;
-      /* flex-direction: column; */
+      flex-direction: column;
     }
   
     .navbar.show {
