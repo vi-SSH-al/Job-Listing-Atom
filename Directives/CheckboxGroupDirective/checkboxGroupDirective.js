@@ -17,7 +17,9 @@
       link: function (scope, element, attrs) {
         // console.log("asdad", scope.items);
         scope.toggleCheck = function (item) {
+          console.log("berofre", item.checked);
           item.checked = !item.checked;
+          console.log("After", item.checked);
         };
       },
     };

@@ -27,6 +27,8 @@
 /* Filter Sections */
 .filter-section {
   border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+  padding-top: 8px;
 }
 
 .filter-header {
@@ -37,7 +39,10 @@
 }
 
 .filter-title {
-  font-weight: bold;
+  font-weight: 600;
+    font-size: 14px;
+    color: #212121;
+    margin-left: 9px;
 }
 
 .toggle-icon {
@@ -53,8 +58,11 @@
 }
 
 /* Search Inputs */
-.search-input {
+.search-icon {
   position: relative;
+  left: -264px;
+  top: 6px;
+  color: #424242;
 }
 
 .search-input input {
@@ -77,12 +85,13 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+  margin-left: 12px;
 }
 
 .checkbox {
   width: 18px;
   height: 18px;
-  border: 1px solid #ccc;
+  border: 1px solid #323232;
   border-radius: 3px;
   margin-right: 10px;
   display: flex;
@@ -107,7 +116,8 @@
 .checkbox-item {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+  margin-left: 10px;
 }
 
 /* Dropdown Styles */
@@ -191,7 +201,8 @@
 
 .row-left,
 .row-right {
-  width: 48%;
+  width: 100%;
+  margin-left: 12px;
 }
 
 .range-row {
@@ -199,6 +210,8 @@
 }
 
 .range-separator {
+  position: relative;
+  left: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,18 +247,6 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-}
-
-.checkbox {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
 }
 
 .checkbox.checked {
@@ -306,7 +307,8 @@
 
 /* Input Field Styles */
 .input-field-container {
-  width: 100%;
+  width: 92%;
+
   gap: 4px;
 }
 
@@ -332,7 +334,6 @@
   cursor: pointer;
   background-color: white;
   font-size: 14px;
-  height: 38px;
 }
 
 .dropdown-select.active {
@@ -375,16 +376,35 @@
 
 /* Text Input Styles */
 .text-field input {
-  width: 133px;
+  width: 87%;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
-  height: 34px;
   gap: 8px;
 }
 
 .text-field input:focus {
   border-color: #1a45a8;
   outline: none;
+}
+
+.apply-filter-container {
+  width: 318px;
+  height: 48px;
+  background-color: #ffffff;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.apply-filter-btn {
+  margin-top: 12px;
+  width: 100%;
+  background-color: #192890;
+  height: 24px;
+
+  padding: 4px 8px 4px;
+  text-align: center;
+  color: #ccc;
+  font-weight: 400;
+  font-size: 12px;
 }

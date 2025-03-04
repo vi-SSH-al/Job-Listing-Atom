@@ -14,8 +14,11 @@
         type="text"
         class="search-input"
         ng-model="searchText"
-        placeholder="Search By {{title}}"
+        placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By {{title}}"
       />
+      <span class="material-icons search-icon" ng-if="!searchText">
+        search
+      </span>
     </div>
     <div class="multi-select-dropdown-list" ng-if="searchText">
       <div
