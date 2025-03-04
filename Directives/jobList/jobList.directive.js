@@ -4,7 +4,7 @@ angular.module("job_listing").directive("jobListDirective", function () {
     restrict: "E",
     templateUrl: "./Directives/jobList/jobList.directive.html",
     scope: {},
-    controller: function ($scope, $http, $sce) {
+    controller: function ($scope, $http) {
       // Initialize arrays
       $scope.appliedByMe = [];
       $scope.postedByMe = [];
@@ -86,7 +86,7 @@ angular.module("job_listing").directive("jobListDirective", function () {
           return `Posted ${years} year${years > 1 ? "s" : ""} ago`;
         }
       };
-      
+
       //Format salary
       $scope.formatSalary = function (salary) {
         if (!salary || (salary.min_salary === 0 && salary.max_salary === 0)) {
@@ -114,7 +114,7 @@ angular.module("job_listing").directive("jobListDirective", function () {
       //apply
       $scope.applyFun = function (status, deadline) {
         if (status === "applied") {
-          return {text: `Applied`};
+          return { text: `Applied` };
         }
 
         const deadlineDate = new Date(deadline);
@@ -123,18 +123,14 @@ angular.module("job_listing").directive("jobListDirective", function () {
         // Calculate the number of days left
         const timeDiff = deadlineDate - today;
         const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Convert ms to days
-        console.log("Days left are "+daysLeft);
 
-        let text = '';
+        let text = "";
         if (daysLeft < 13) {
           text = `Apply in ${daysLeft} days`;
-        }else {
+        } else {
           text = `Apply by ${deadline}`;
         }
-
-        console.log(text);
-        
-        return {text: text, daysLeft: daysLeft}
+        return { text: text, daysLeft: daysLeft };
       };
     },
   };
