@@ -1,0 +1,101 @@
+body {
+    background-color: #f9fafb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 16px;
+    min-height: 100vh;
+  }
+  
+  .job-card {
+    padding: 24px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 16px;
+  }
+  
+  .job-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  
+  .job-title-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  
+  .job-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  .separator {
+    color: #6b7280;
+  }
+  
+  .company-name {
+    color: #6b7280;
+  }
+  
+  .job-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 12px;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .job-type {
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 9999px;
+  }
+  
+  .full-time {
+    background-color: #eff6ff;
+    color: #1e40af;
+  }
+  
+  .volunteering {
+    background-color: #f5f3ff;
+    color: #6b21a8;
+  }
+  
+  .job-footer {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #6b7280;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 12px;
+  }
+  
+  .clock-icon {
+    color: #9ca3af;
+    margin-right: 4px;
+  }
+  
+  .dot {
+    margin: 0 8px;
+  }
+  

@@ -1,2 +1,2 @@
 "use strict";
-angular.module("demo", []);
+angular.module("demo", ["jobList"]);
