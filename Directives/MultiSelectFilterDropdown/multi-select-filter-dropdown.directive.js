@@ -1,9 +1,11 @@
+"use strict";
 angular
-  .module("job_listing", [])
+  .module("job_listing")
   .directive("multiSelectFilterDropdown", function () {
     return {
       restrict: "E",
-      templateUrl: "",
+      templateUrl:
+        "./Directives/MultiSelectFilterDropdown/multi-select-filter-dropdown.html",
       scope: {
         items: "=",
         title: "@",

@@ -6,6 +6,8 @@
     /* padding: 20px; */
     height: 100vh;
     border: 2px solid blue;
+    padding: 20px;
+    height: 73vh;
     overflow: auto;
   }
   
@@ -113,6 +115,12 @@
     color: black;
 }
 
+  }
+
+  .container::-webkit-scrollbar {
+    display: none;
+}
+  
   .job-card {
     padding: 10px;
     background-color: white;
