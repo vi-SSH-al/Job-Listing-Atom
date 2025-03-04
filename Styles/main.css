@@ -43,3 +43,8 @@ body {
     width: 100%;
     height: 18%;
 }
+
+.job-list-display{
+    border: 2px solid red;
+    overflow: auto;
+}
