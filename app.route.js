@@ -4,12 +4,14 @@ var app = angular.module("job_listing", ["ngRoute"]);
 app.config(function ($routeProvider) {
   $routeProvider.when("/", {
     // templateUrl: "./Components/Demo/demo.html",
-    templateUrl: "./Components/navbar/navbar.component.html",
+    templateUrl: "./Directives/jobList/jobList.html",
+    // templateUrl: "./Directives/navbar/navbar.html",
     // controller: "demoController",
-    controller: "navbarController",
+    controller: "jobListController",
+    // controller: "navbarController",
   });
   $routeProvider.when("/navbar", {
-    templateUrl: "./Components/navbar/navbar.component.html",
+    templateUrl: "./Directives/navbar/navbar.html",
     controller: "navbarController",
   });
 });

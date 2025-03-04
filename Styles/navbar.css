@@ -1,7 +1,14 @@
-
+.logo{
+    height: 80px;
+    /* width: 100px; */
+    background-color: #FCFEFF;
+}
+.logo-image{
+    height: 100%;
+}
 .navbar {
     background-color: #192890;
-    padding: 15px;
+    padding: 1px;
     text-align: center;
 }
 
