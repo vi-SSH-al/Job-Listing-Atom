@@ -3,11 +3,123 @@
   .container {
     max-width: 768px;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
     height: 100vh;
     border: 2px solid blue;
+    padding: 20px;
+    height: 73vh;
     overflow: auto;
   }
+  
+
+  /* .container {
+    max-width: 100%;
+    padding: 20px;
+    background: #fff;
+} */
+
+/* .second-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+} */
+
+.dummy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 20px; */
+}
+
+.dummy p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.dummy-button {
+    display: flex;
+    gap: 10px;
+}
+
+.dummy-button button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#dummy1{
+  font-size: 12px;
+}
+
+.dummy-button button:first-child {
+    background: #f7f7f7;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.dummy-button button:first-child:hover {
+    background: #e0e0e0;
+}
+
+.dummy-button button:last-child {
+    background: #2b2bb2;
+    color: white;
+}
+
+.dummy-button button:last-child:hover {
+    background: #1e1e9f;
+}
+
+.filterButtenForJobList {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    background-color: #EEEEEE;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.filterButtenForJobList button {
+    padding: 8px 15px;
+    border: 1px solid #EEEEEE;
+    background: #EEEEEE;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filterButtenForJobList button:hover,
+.filterButtenForJobList button:focus {
+    background: #fcfeff;
+}
+
+.filterButtenForJobList button.active {
+    background: white;
+    border: 1px solid #999;
+    font-weight: bold;
+}
+
+#p1 {
+    margin: 15px 0px;
+    font-size: 15px;
+    color: black;
+}
+
+  }
+
+  .container::-webkit-scrollbar {
+    display: none;
+}
   
   .job-card {
     padding: 10px;
@@ -16,8 +128,8 @@
     border: 1px solid #f3f4f6;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     margin-bottom: 12px;
-    font-size: 14px; /* Make text slightly smaller */
-    line-height: 1.4; /* Improved readability */
+    font-size: 14px; 
+    line-height: 1.4; 
   }
   
   .job-card-header {
