@@ -59,7 +59,7 @@
     gap: 4px;
   }
   
-  .job-type {
+  .batch {
     padding: 4px 12px;
     color: #616161;
     font-size: 12px;
@@ -67,12 +67,18 @@
     border-radius: 9999px;
     outline: 2px solid #E0E0E0;
   }
+
+  .batch-time{
+    background-color: #F4F9ED;
+    color: #328632;
+    outline: 2px solid #8BC34A;
+  }
   
   .full-time {
     background-color: #eff6ff;
     color: #1e40af;
   }
-  
+
   .volunteering {
     background-color: #f5f3ff;
     color: #6b21a8;
