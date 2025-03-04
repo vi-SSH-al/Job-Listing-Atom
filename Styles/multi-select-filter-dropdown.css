@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4px 9px;
+    padding: 4px 8px 4px 9px;
     border-radius: 4px;
     cursor: pointer;
     /* user-select: none; */
@@ -17,8 +17,8 @@
   
   .multi-select-filter-title {
     font-weight: 600;
-    font-size: 16px;
-    color: #333;
+    font-size: 14px;
+    color: #212121;
   }
   
   .multi-select-dropdown-toggle {

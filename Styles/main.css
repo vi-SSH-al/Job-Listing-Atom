@@ -21,18 +21,26 @@ body {
 
 .filter-list-container {
   display: flex;
-  background-color: #FFFFFF;
+  background-color: #ffffff00;
   margin: 20px 108px 51px 108px;
   height: 80%;
 }
 
 .filter-sidebar {
+    border-radius: 4px;
+    border: 1.5px solid #E0E0E0;
+    width: 35%;
     height: 100%;
     overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.filter-sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 .jobs-list {
-  /* background-color: #1b961f; */
+  background-color: #1b961f00;
   width: 100%;
   height: 100%;
 }

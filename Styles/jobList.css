@@ -2,10 +2,9 @@
   
   .container {
     max-width: 768px;
-    margin: 0 auto;
+    margin: 0 28px;
     /* padding: 20px; */
     height: 100vh;
-    border: 2px solid blue;
     padding: 20px;
     height: 73vh;
     overflow: auto;
