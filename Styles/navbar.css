@@ -1,46 +1,83 @@
-.logo{
+/* Logo */
+.logo {
     height: 70px;
-    /* width: 100px; */
-    background-color: #FCFEFF;
-}
-.logo-image{
+    background-color: #fcfeff;
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  /* Logo Image */
+  .logo-image {
     height: 100%;
-}
-.navbar {
+  }
+  
+  /* Mobile Menu Icon */
+  .dropDownMenuForNavbar {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  /* Navbar */
+  .navbar {
     background-color: #192890;
     padding: 1px;
     text-align: center;
-}
-
-.navbar ul {
+  }
+  
+  .navbar ul {
     list-style: none;
     display: flex;
     justify-content: center;
     padding: 0;
-}
-
-.navbar ul li {
+  }
+  
+  .navbar ul li {
     margin: 0 15px;
     position: relative;
-}
-
-.navbar ul li a {
+  }
+  
+  .navbar ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
     display: flex;
     align-items: center;
-}
-
-/* Style for Material Icons */
-.navbar ul li .material-icons {
+  }
+  
+  /* Style for Material Icons */
+  .navbar ul li .material-icons {
     font-size: 18px;
     margin-left: 5px;
     vertical-align: middle;
-}
+  }
+  
 
-.navbar ul li a:hover {
-    color: #f9a825;
-}
-
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .dropDownMenuForNavbar {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .navbar {
+      display: none;
+      /* flex-direction: column; */
+    }
+  
+    .navbar.show {
+      display: flex;
+    }
+  
+    .navbar ul {
+      flex-direction: column;
+    }
+  
+    .navbar ul li {
+      margin: 10px 0;
+    }
+  }
+  
