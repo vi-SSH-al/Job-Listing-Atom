@@ -1,6 +1,90 @@
 "use strict";
 
 angular.module("job_listing").controller("MainController", function ($scope) {
+  $scope.industries = [
+    "Information Technology",
+    "Finance",
+    "Healthcare",
+    "Education",
+    "Manufacturing",
+    "Retail",
+    "Construction",
+    "Real Estate",
+    "Telecommunications",
+    "Automotive",
+    "Hospitality",
+    "Agriculture",
+    "Pharmaceuticals",
+    "Media & Entertainment",
+    "Energy & Utilities",
+    "Legal Services",
+    "Transportation & Logistics",
+    "E-commerce",
+    "Government & Public Sector",
+    "Aerospace & Defense",
+  ];
+
+  $scope.skills = [
+    "JavaScript",
+    "Python",
+    "Java",
+    "C++",
+    "C#",
+    "SQL",
+    "Machine Learning",
+    "Deep Learning",
+    "Cloud Computing",
+    "Cybersecurity",
+    "Project Management",
+    "Data Analysis",
+    "UI/UX Design",
+    "DevOps",
+    "Blockchain",
+    "Networking",
+    "Digital Marketing",
+    "Business Analysis",
+    "Artificial Intelligence",
+    "Software Testing",
+    "Mobile App Development",
+    "Game Development",
+    "Embedded Systems",
+    "Web Development",
+    "Graphic Design",
+  ];
+
+  $scope.locations = [
+    "New York",
+    "San Francisco",
+    "Los Angeles",
+    "Chicago",
+    "Houston",
+    "London",
+    "Berlin",
+    "Sydney",
+    "Toronto",
+    "Mumbai",
+    "Paris",
+    "Dubai",
+    "Tokyo",
+    "Singapore",
+    "Bangkok",
+    "Madrid",
+    "Barcelona",
+    "Rome",
+    "Amsterdam",
+    "Hong Kong",
+    "Kuala Lumpur",
+    "Shanghai",
+    "Seoul",
+    "Bangalore",
+    "Melbourne",
+    "Mexico City",
+    "São Paulo",
+    "Jakarta",
+    "Istanbul",
+    "Moscow",
+  ];
+
   $scope.opportunityTypes = [
     { id: "fullTime", label: "Full-time", checked: false },
     { id: "partTime", label: "Part-time", checked: false },
@@ -70,7 +154,27 @@ angular.module("job_listing").controller("MainController", function ($scope) {
 
   // Toggle filter sections
   $scope.toggleSection = function (section) {
-    $scope[section + "Expanded"] = !vm[section + "Expanded"];
+    $scope[section + "Expanded"] = !$scope[section + "Expanded"];
+  };
+  $scope.toggleSection = function (section) {
+    $scope[section + "Expanded"] = !$scope[section + "Expanded"];
+  };
+
+  // Helper functions for the experience section
+  $scope.isExperienced = function () {
+    return $scope.filters.workExperience.type === "experienced";
+  };
+
+  $scope.isFresher = function () {
+    return $scope.filters.workExperience.type === "fresher";
+  };
+
+  $scope.setExperienceType = function (type) {
+    $scope.filters.workExperience.type = type;
+  };
+
+  $scope.isSelected = function (type) {
+    return $scope.filters.workExperience.type === type;
   };
 
   // Initialize expanded sections
@@ -81,6 +185,10 @@ angular.module("job_listing").controller("MainController", function ($scope) {
   $scope.salaryExpanded = true;
   $scope.workExperienceExpanded = true;
   $scope.skillsExpanded = true;
+
+  $scope.toggleRadio = function () {
+    $scope.model = $scope.value;
+  };
 
   // Apply filters
   $scope.applyFilters = function () {

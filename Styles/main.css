@@ -21,14 +21,14 @@ body {
 
 .filter-list-container {
   display: flex;
-
+  background-color: #FFFFFF;
   margin: 20px 108px 51px 108px;
   height: 80%;
 }
 
 .filter-sidebar {
-  width: 30%;
-  height: fit-content;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .jobs-list {
