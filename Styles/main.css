@@ -47,4 +47,14 @@ body {
   .filter-list-container {
     height: 78%;
   }
+ 
+}
+@media (max-width: 768px){
+  .filter-sidebar{
+    display: none;
+  }
+  .filter-list-container{
+    margin: 0;
+  }
+
 }

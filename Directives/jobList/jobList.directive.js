@@ -13,6 +13,7 @@ angular
         $scope.allOpportunities = [];
         $scope.jobs = [];
         $scope.lengthOfData = 0;
+        $scope.lengthOfData1 = 0;
 
         // Fetch job data
         $http
