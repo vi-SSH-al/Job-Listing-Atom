@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="filter-body" ng-show="opportunityTypeExpanded">
-          <checkbox-group-directive items="opportunityTypes">
+          <checkbox-group-directive items="filters.opportunityTypes">
           </checkbox-group-directive>
         </div>
       </div>
@@ -240,6 +240,16 @@
             <input type="text" placeholder="Search by skills (max 5)" />
             <i class="fa fa-search"></i>
           </div>
+        </div>
+      </div>
+      <!-- Other filters -->
+
+      <!-- Apply Filters Button -->
+      <div class="filter-section apply-filter">
+        <div class="apply-filter-container">
+          <button class="apply-filter-btn" ng-click="applyFilters()">
+            Apply Filters
+          </button>
         </div>
       </div>
     </div>

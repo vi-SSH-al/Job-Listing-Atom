@@ -390,3 +390,23 @@
   border-color: #1a45a8;
   outline: none;
 }
+
+.apply-filter-container {
+  width: 318px;
+  height: 48px;
+  background-color: #ffffff;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.apply-filter-btn {
+  margin-top: 12px;
+  width: 100%;
+  background-color: #192890;
+  height: 24px;
+
+  padding: 4px 8px 4px;
+  text-align: center;
+  color: #ccc;
+  font-weight: 400;
+  font-size: 12px;
+}
