@@ -3,8 +3,9 @@
     height: 70px;
     background-color: #fcfeff;
     display: flex;
+    /* justify-content: space-between; */
     align-items: center;
-  
+    /* padding: 10px 20px; */
   }
   
   /* Logo Image */
@@ -54,13 +55,11 @@
     vertical-align: middle;
   }
   
-
   
   /* Mobile Styles */
   @media (max-width: 768px) {
     .dropDownMenuForNavbar {
       display: block;
-      cursor: pointer;
     }
   
     .navbar {
