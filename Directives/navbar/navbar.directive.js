@@ -17,16 +17,6 @@ angular.module("job_listing").directive("navbar", function ($document) {
       };
 
       // Close menu when clicking outside
-      $document.on("click", function (event) {
-        var isClickedInside = angular
-          .element(event.target)
-          .closest(".navbar, .dropDownMenuForNavbar").length;
-        if (!isClickedInside) {
-          $scope.$apply(function () {
-            $scope.menuOpen = false;
-          });
-        }
-      });
     },
   };
 });
