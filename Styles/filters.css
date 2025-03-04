@@ -27,7 +27,6 @@
 /* Filter Sections */
 .filter-section {
   border-bottom: 1px solid #e0e0e0;
-  padding: 15px;
 }
 
 .filter-header {
@@ -56,7 +55,6 @@
 /* Search Inputs */
 .search-input {
   position: relative;
-  margin-top: 10px;
 }
 
 .search-input input {
