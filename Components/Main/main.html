@@ -9,6 +9,19 @@
         <div class="filters-title"><i class="fa fa-filter"></i> Filters</div>
       </div>
 
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          ng-model="universalSearchInput"
+          ng-keyup="onSearchKeyup($event)"
+          placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By title, company, etc"
+        />
+        <span class="material-icons search-icon" ng-if="!universalSearchInput">
+          search
+        </span>
+      </div>
+
       <div class="filter-section">
         <div class="filter-option">
           <checkbox-directive

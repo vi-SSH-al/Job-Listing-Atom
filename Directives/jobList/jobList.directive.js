@@ -4,45 +4,29 @@ angular.module("job_listing").directive("jobListDirective", function () {
     restrict: "E",
     templateUrl: "./Directives/jobList/jobList.directive.html",
     scope: {},
-    controller: function ($scope, $http, $rootScope) {
+    controller: function ($scope, $http) {
       // Initialize arrays
       $scope.appliedByMe = [];
       $scope.postedByMe = [];
       $scope.allOpportunities = [];
-      $scope.filteredJobs = [];
+      $scope.jobs = [];
+      $scope.lengthOfData = 0;
+
       // Fetch job data
       $http
         .get("./secret.json")
         .then(function (response) {
           $scope.jobs = response.data;
-          console.log($scope.jobs);
-
-          // Store the full list for filtering later
-          $scope.allOpportunities = $scope.jobs;
-          $scope.postedByMe = $scope.jobs.filter(
-            (job) => job.status === "posted"
-          );
-          $scope.appliedByMe = $scope.jobs.filter(
-            (job) => job.status === "applied"
-          );
-
-          // Initialize filteredJobs with all opportunities
-          $scope.filteredJobs = $scope.allOpportunities;
-
+          $scope.allOpportunities = $scope.jobs; // Store all opportunities
+          $scope.lengthOfData = $scope.jobs.length; // Set initial count
           console.log("All Opportunities:", $scope.allOpportunities);
-          console.log("Posted By Me:", $scope.postedByMe);
-          console.log("Applied By Me:", $scope.appliedByMe);
         })
         .catch(function (error) {
-          console.error("Error loading job data: ", error);
+          console.error("Error loading job data:", error);
         });
 
-      // Listen for the filtersApplied event
-      $scope.$on("filtersApplied", function (event, filters) {
-        applyJobFilters(filters);
-      });
+      // Function to set all opportunities
 
-      // Filtering logic based on filter criteria
       function applyJobFilters(filters) {
         console.log("filres h ", filters);
         let filtered = $scope.allOpportunities;
@@ -133,6 +117,55 @@ angular.module("job_listing").directive("jobListDirective", function () {
         $scope.jobs = $scope.filteredJobs;
       }
 
+      $scope.setAllOpportunities = function () {
+        $scope.jobs = $scope.allOpportunities;
+        $scope.lengthOfData = $scope.jobs.length;
+      };
+
+      // Function to filter jobs posted by the user
+      $scope.setPostedByMe = function () {
+        $scope.jobs = $scope.allOpportunities.filter(
+          (job) => job.status === "posted"
+        );
+        $scope.lengthOfData = $scope.jobs.length;
+      };
+
+      // Function to filter jobs applied by the user
+      $scope.setAppliedByMe = function () {
+        $scope.jobs = $scope.allOpportunities.filter(
+          (job) => job.status === "applied"
+        );
+        $scope.lengthOfData = $scope.jobs.length;
+      };
+
+      // Watch jobs array for changes
+      $scope.$watch(
+        "jobs",
+        function (newVal) {
+          $scope.lengthOfData = newVal.length;
+        },
+        true
+      );
+      $scope.$on("filtersApplied", function (event, filters) {
+        applyJobFilters(filters);
+      });
+      $scope.$on("searchQuerySubmitted", function (event, query) {
+        if (!query || query.trim() === "") {
+          $scope.jobs = $scope.allOpportunities;
+        } else {
+          let lowerQuery = query.toLowerCase();
+
+          $scope.jobs = $scope.allOpportunities.filter(function (job) {
+            return (
+              job.opportunity_title.toLowerCase().includes(lowerQuery) ||
+              job.company.toLowerCase().includes(lowerQuery) ||
+              job.location.toLowerCase().includes(lowerQuery)
+            );
+          });
+        }
+        console.log("Jobs updated via search:", $scope.jobs);
+      });
+
       //Format timeAgo
       $scope.timeAgo = function (postedAt) {
         if (!postedAt) return "";
@@ -176,6 +209,38 @@ angular.module("job_listing").directive("jobListDirective", function () {
           return `Max ${salary.currency} ${salary.max_salary} / year`;
         }
         return `${salary.currency} ${salary.min_salary} - ${salary.max_salary} / year`;
+      };
+
+      //isRecent
+      $scope.isRecent = function (postedAt) {
+        const postedDate = new Date(postedAt);
+        const now = new Date();
+        const diffInSeconds = Math.floor((now - postedDate) / 1000);
+        const diffInDays = Math.floor(diffInSeconds / (60 * 60 * 24));
+
+        return diffInDays < 5; // Returns true if within 5 days
+      };
+
+      //apply
+      $scope.applyFun = function (status, deadline) {
+        if (status === "applied") {
+          return { text: `Applied` };
+        }
+
+        const deadlineDate = new Date(deadline);
+        const today = new Date();
+
+        // Calculate the number of days left
+        const timeDiff = deadlineDate - today;
+        const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Convert ms to days
+
+        let text = "";
+        if (daysLeft < 13) {
+          text = `Apply in ${daysLeft} days`;
+        } else {
+          text = `Apply by ${deadline}`;
+        }
+        return { text: text, daysLeft: daysLeft };
       };
     },
   };

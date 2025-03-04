@@ -1,31 +1,51 @@
-
 <div class="container">
     <div class="second-container">
         <div class="dummy">
-            <p>Opportunities</p>
-            <div class="dummy-button">
-                <button > <span id="dummy1" class="material-icons" >
-                    settings
-                </span> Preferences</button>
-                <button ><span  id="dummy1" class="material-icons" >
-                    add
-                </span> Post an opportunity</button>
-            </div>
-         
+        <p>Opportunities</p>
+        <div class="dummy-button">
+            <button>
+            <span id="dummy1" class="material-icons"> settings </span> Preferences
+            </button>
+
+            <button>
+            <span id="dummy1" class="material-icons"> add </span> Post an
+            opportunity
+            </button>
         </div>
-        
+            <div class="mobile-dummy-button">
+            <button>
+                <span id="dummy1" class="material-icons"> settings </span>
+                
+            </button>
+            <button>
+                <span id="dummy1" class="material-icons"> add </span> Post 
+            </button>
+            
+        </div>
+        </div>
+
         <div class="filterButtenForJobList">
-            <button  ng-click="setAllOpportunities()"> All opportunities </button>
-            <button ng-click = "setPostedByMe()" >Posted by me </button>
-            <button ng-click = "setAppliedByMe()"  >Applied by me</button>
-
+        <button ng-click="setAllOpportunities()">All opportunities</button>
+        <button ng-click="setPostedByMe()">Posted by me</button>
+        <button ng-click="setAppliedByMe()">Applied by me</button>
         </div>
 
-        <p id = "p1">Showing {{lengthOfData}} opportunities</p>
-
-
+        <div class="noOfResult">
+        <p id="p1" ng-if="lengthOfData !=0">
+            Showing {{lengthOfData}} opportunities
+        </p>
+        <p id="p1" ng-if="lengthOfData ==0">{{lengthOfData}} opportunity found</p>
+        <div class="mobile-filter">
+            <span class="material-icons"> filter_alt </span>
+        </div>
+        </div>
     </div>
 
+    <div class="no-reply" ng-if="lengthOfData===0">
+        <img src="./Directives/jobList/image.png" alt="" srcset="" />
+        <p id="p2">There are no opportunities to display!</p>
+        <p id="p2">Try changing or reset filters to see opportunities</p>
+    </div>
 
     <div class="job-card" ng-repeat="job in jobs">
         <div class="job-card-header">
@@ -54,36 +74,10 @@
             <span class="batch">{{job.opportunity_type}}</span>
         </div>
         <div class="job-footer">
-            <!-- <span class="batch batch-time">Posted 5 days ago</span> -->
-            <span class="batch batch-time">{{timeAgo(job.posted_at)}} </span>
+            <span class="batch" ng-class="{'batch-time': isRecent(job.posted_at)}">{{timeAgo(job.posted_at)}} </span>
             <span class="dot">•</span>
-            <span>Apply by 12/02/2025</span>
-        </div>
-    </div>
-    
-    <div class="job-card">
-        <div class="job-card-header">
-            <div>
-                <div class="job-title-container">
-                    <h2 class="job-title">Software Engineer</h2>
-                    <span class="separator">|</span>
-                    <span class="company-name">ABC Firms</span>
-                </div>
-                <div class="job-details">
-                    <div class="detail-item"><span>&#x1F4CD;</span> Ahmedabad (Hybrid)</div>
-                    <div class="detail-item"><span>&#x1F4BC;</span> Not specified</div>
-                    <div class="detail-item"><span>&#x1F4B2;</span> INR 25,00,000 - 30,00,000 / year</div>
-                </div>
-            </div>
-            <span class="batch volunteering">Volunteering</span>
-        </div>
-        <div class="job-footer">
-            <span class="clock-icon">&#x23F0;</span>
-            <span>{{ timeAgo(job.posted_at) }}</span>
-            <span>Hello</span>
-            <!-- <span>Posted 1 week ago</span> -->
-            <span class="dot">•</span>
-            <span>Apply by 14/02/2025</span>
+            <span ng-if="job.status === 'applied'" class="material-icons verified">verified</span>
+            <span class="deadline" ng-class="{'text-red': applyFun(job.status, job.deadline_to_reply).daysLeft < 12}">{{applyFun(job.status, job.deadline_to_reply).text}}</span>
         </div>
     </div>
 </div>
