@@ -1,0 +1,131 @@
+.multi-select-dropdown {
+    position: relative;
+    width: 100%;
+    font-family: sans-serif;
+    margin-bottom: 16px;
+  }
+  
+  .multi-select-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .multi-select-filter-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .multi-select-dropdown-toggle {
+    color: #6B7280;
+    transition: transform 0.3s ease;
+  }
+  
+  .multi-select-dropdown-toggle.rotated {
+    transform: rotate(180deg);
+  }
+  
+  .multi-select-filter-content {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    border: 0 solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .multi-select-filter-content.open {
+    max-height: 300px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .multi-select-dropdown-list {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .multi-select-dropdown-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  
+  .multi-select-dropdown-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .selected-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .selected-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .item-text {
+    margin-right: 8px;
+  }
+  
+  .remove-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .no-results {
+    padding: 12px;
+    color: #6B7280;
+    font-style: italic;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .add-custom-selection {
+    padding: 6px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #333;
+  }
+  
+  .add-custom-selection:hover {
+    background-color: #e0e0e0;
+  }
