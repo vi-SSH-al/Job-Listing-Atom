@@ -49,6 +49,21 @@ angular
         $scope.$watch("jobs", function (newVal) {
           $scope.lengthOfData = newVal.length;
         }, true);
+
+        //Format salary
+        $scope.formatSalary = function (salary) {
+          if (!salary || (salary.min_salary === 0 && salary.max_salary === 0)) {
+            return "Not Specified";
+          }
+          if (salary.min_salary && !salary.max_salary) {
+            return `Min ${salary.currency} ${salary.min_salary} / year`;
+          }
+          if (!salary.min_salary && salary.max_salary) {
+            return `Max ${salary.currency} ${salary.max_salary} / year`;
+          }
+          return `${salary.currency} ${salary.min_salary} - ${salary.max_salary} / year`;
+        };
+
       },
     };
   });

@@ -4,7 +4,7 @@
     max-width: 768px;
     margin: 0 auto;
     /* padding: 20px; */
-    height: 100vh;
+    /* height: 100vh; */
     border: 2px solid blue;
     padding: 20px;
     height: 73vh;
@@ -115,9 +115,7 @@
     color: black;
 }
 
-  }
-
-  .container::-webkit-scrollbar {
+.container::-webkit-scrollbar {
     display: none;
 }
   
