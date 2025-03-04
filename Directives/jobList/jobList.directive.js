@@ -12,6 +12,7 @@ angular
       $scope.appliedByMe = [];
       $scope.postedByMe = [];
       $scope.allOpportunities = [];
+      
 
       // Fetch job data
       $http
@@ -22,9 +23,7 @@ angular
           
           // Assign filtered data
           $scope.allOpportunities = $scope.jobs;
-          $scope.postedByMe = $scope.jobs.filter((job) => job.status === "posted");
-          $scope.appliedByMe = $scope.jobs.filter((job) => job.status === "applied");
-
+          
           // Log values directly after data is loaded
           console.log("All Opportunities:", $scope.allOpportunities);
           console.log("Posted By Me:", $scope.postedByMe);
@@ -33,6 +32,22 @@ angular
         .catch(function (error) {
           console.error("Error loading job data: ", error);
         });
+        
+        $scope.setAllOpportunities =function  (){
+          $scope.job = $scope.allOpportunities;
+        };
+        $scope.setPostedByMe =function  (){
+          $scope.postedByMe = $scope.jobs.filter((job) => job.status === "posted");
+          $scope.job = $scope.postedByMe;
+        };
+        
+        $scope.setAppliedByMe =function  (){
+          $scope.appliedByMe = $scope.jobs.filter((job) => job.status === "applied");
+          $scope.job = $scope.appliedByMe;
+        };
+
+
+
       }
     };
    
