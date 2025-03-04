@@ -6,6 +6,7 @@ app.config(function ($routeProvider) {
     .when("/", {
       // templateUrl: "./Components/Demo/demo.html",
       templateUrl: "./Components/Main/main.html",
+      controller: "MainController",
     })
     .when("/demo", {
       // templateUrl: "./Components/Demo/demo.html",
