@@ -1,0 +1,21 @@
+<!-- Directives/DropdownDirective/dropdownDirective.html -->
+<div class="dropdown-container">
+  <div class="dropdown-select" ng-click="toggleDropdown()">
+    <div class="dropdown-selected">{{getSelectedLabel() || 'Select'}}</div>
+    <div class="dropdown-arrow">
+      <i
+        class="fa"
+        ng-class="{'fa-chevron-down': !isOpen, 'fa-chevron-up': isOpen}"
+      ></i>
+    </div>
+  </div>
+  <div class="dropdown-options" ng-show="isOpen">
+    <div
+      class="dropdown-option"
+      ng-repeat="option in options"
+      ng-click="selectOption(option)"
+    >
+      {{option.label}}
+    </div>
+  </div>
+</div>

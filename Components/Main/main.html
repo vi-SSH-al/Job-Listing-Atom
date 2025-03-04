@@ -5,7 +5,206 @@
   </div>
   <div class="filter-list-container">
     <div class="filter-sidebar">
-      sidebar this will fit according to the content
+      <div class="filters-header">
+        <div class="filters-title"><i class="fa fa-filter"></i> Filters</div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-option">
+          <checkbox-directive
+            label="Show open opportunities only"
+            model="filters.showOpenOnly"
+          >
+          </checkbox-directive>
+        </div>
+      </div>
+
+      <!-- Industry Filter -->
+      <div class="filter-section">
+        <div class="filter-header" ng-click="toggleSection('industry')">
+          <div class="filter-title">Industry</div>
+          <div class="toggle-icon">
+            <i
+              class="fa"
+              ng-class="{'fa-chevron-down': industryExpanded, 'fa-chevron-up': !industryExpanded}"
+            ></i>
+          </div>
+        </div>
+        <div class="filter-body" ng-show="industryExpanded">
+          <div class="search-input">
+            <input type="text" placeholder="Search industry" />
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opportunity Type Filter -->
+      <div class="filter-section">
+        <div class="filter-header" ng-click="toggleSection('opportunityType')">
+          <div class="filter-title">Opportunity type</div>
+          <div class="toggle-icon">
+            <i
+              class="fa"
+              ng-class="{'fa-chevron-down': opportunityTypeExpanded, 'fa-chevron-up': !opportunityTypeExpanded}"
+            ></i>
+          </div>
+        </div>
+        <div class="filter-body" ng-show="opportunityTypeExpanded">
+          <checkbox-group-directive items="opportunityTypes">
+          </checkbox-group-directive>
+        </div>
+      </div>
+
+      <!-- Location Filter -->
+      <div class="filter-section">
+        <div class="filter-header" ng-click="toggleSection('location')">
+          <div class="filter-title">Location</div>
+          <div class="toggle-icon">
+            <i
+              class="fa"
+              ng-class="{'fa-chevron-down': locationExpanded, 'fa-chevron-up': !locationExpanded}"
+            ></i>
+          </div>
+        </div>
+        <div class="filter-body" ng-show="locationExpanded">
+          <div class="search-input">
+            <input type="text" placeholder="Search location" />
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workplace Type Filter -->
+      <div class="filter-section">
+        <div class="filter-header" ng-click="toggleSection('workplaceType')">
+          <div class="filter-title">Workplace type</div>
+          <div class="toggle-icon">
+            <i
+              class="fa"
+              ng-class="{'fa-chevron-down': workplaceTypeExpanded, 'fa-chevron-up': !workplaceTypeExpanded}"
+            ></i>
+          </div>
+        </div>
+        <div class="filter-body" ng-show="workplaceTypeExpanded">
+          <checkbox-group-directive items="filters.workplaceTypes">
+          </checkbox-group-directive>
+        </div>
+      </div>
+
+      <!-- Salary Filter -->
+      <div class="filter-section">
+        <div class="filter-header" ng-click="toggleSection('salary')">
+          <div class="filter-title">Salary</div>
+          <div class="toggle-icon">
+            <i
+              class="fa"
+              ng-class="{'fa-chevron-down': salaryExpanded, 'fa-chevron-up': !salaryExpanded}"
+            ></i>
+          </div>
+        </div>
+        <div class="filter-body" ng-show="salaryExpanded">
+          <div class="dropdown-row">
+            <div class="dropdown-label">Currency</div>
+            <dropdown-directive
+              options="currencyOptions"
+              selected="filters.salary.currency"
+            >
+            </dropdown-directive>
+          </div>
+          <div class="dropdown-row">
+            <div class="dropdown-label">Rate</div>
+            <dropdown-directive
+              options="rateOptions"
+              selected="filters.salary.rate"
+            >
+            </dropdown-directive>
+          </div>
+          <div class="min-max-row">
+            <div class="min-max-label">Min salary</div>
+            <div class="min-max-input">
+              <input
+                type="text"
+                ng-model="filters.salary.min"
+                placeholder="Enter"
+              />
+            </div>
+          </div>
+          <div class="min-max-row">
+            <div class="min-max-label">Max salary</div>
+            <div class="min-max-input">
+              <input
+                type="text"
+                ng-model="filters.salary.max"
+                placeholder="Enter"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Experience Filter -->
+      <div class="filter-section">
+        <div class="filter-header" ng-click="toggleSection('workExperience')">
+          <div class="filter-title">Work experience</div>
+          <div class="toggle-icon">
+            <i
+              class="fa"
+              ng-class="{'fa-chevron-down': workExperienceExpanded, 'fa-chevron-up': !workExperienceExpanded}"
+            ></i>
+          </div>
+        </div>
+        <div class="filter-body" ng-show="workExperienceExpanded">
+          <div class="filter-option">
+            <checkbox-directive
+              label="Experienced"
+              model="filters.workExperience.experienced"
+            >
+            </checkbox-directive>
+          </div>
+          <div class="min-max-row">
+            <div class="min-max-label">Min years</div>
+            <dropdown-directive
+              options="yearsOptions"
+              selected="filters.workExperience.minYears"
+            >
+            </dropdown-directive>
+          </div>
+          <div class="min-max-row">
+            <div class="min-max-label">Max years</div>
+            <dropdown-directive
+              options="yearsOptions"
+              selected="filters.workExperience.maxYears"
+            >
+            </dropdown-directive>
+          </div>
+          <div class="filter-option">
+            <checkbox-directive
+              label="Fresher"
+              model="filters.workExperience.fresher"
+            >
+            </checkbox-directive>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Filter -->
+      <div class="filter-section">
+        <div class="filter-header" ng-click="toggleSection('skills')">
+          <div class="filter-title">Skills</div>
+          <div class="toggle-icon">
+            <i
+              class="fa"
+              ng-class="{'fa-chevron-down': skillsExpanded, 'fa-chevron-up': !skillsExpanded}"
+            ></i>
+          </div>
+        </div>
+        <div class="filter-body" ng-show="skillsExpanded">
+          <div class="search-input">
+            <input type="text" placeholder="Search by skills (max 5)" />
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="jobs-list">
       <!-- <div class="job-list-headers">some content according to figma</div> -->
